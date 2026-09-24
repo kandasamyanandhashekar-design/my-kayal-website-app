@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Contact Us{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/contact.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/navbar.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/logo.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/chat.css') }}">
+
+</head>
+<body>
+
+    <!--=====================================================
+     KAYAL VENTURERS
+     3D GLASS NAVBAR
+===================================================== -->
+
+<div class="navbar-wrapper" id="navbarWrapper">
+
+    <nav class="navbar" id="navbar">
+
+        <!-- =================================================
+             LOGO
+        ================================================== -->
+
+        <a href="#home" class="brand">
+
+            <div class="brand-logo">
+                <img src="/static/images/logo.png" alt="">
+            </div>
+
+            <div class="brand-text">
+
+                <div class="brand-name">
+                    KAYAL VENTURERS PVT LTD
+                </div>
+
+                <div class="brand-subtitle">
+                    EXPORT • IMPORT • TRADING
+                </div>
+
+            </div>
+
+        </a>
+
+
+        <!-- =================================================
+             NAVIGATION
+        ================================================== -->
+
+        <ul class="nav-menu" id="navMenu">
+
+            <li class="nav-item">
+
+                <!-- <a href="#home"
+                   class="nav-link active">
+
+                    Home
+
+                </a> -->
+
+                <a href="/"
+                   class="nav-link">
+
+                    Home
+
+                </a>
+
+            </li>
+
+
+            <li class="nav-item">
+
+                <a href="/products"
+                   class="nav-link">
+
+                    Products
+
+                </a>
+
+            </li>
+
+
+            <li class="nav-item">
+
+                <a href="/about"
+                   class="nav-link">
+
+                    About Us
+
+                </a>
+
+            </li>
+
+
+            <li class="nav-item">
+
+                <a href="/story"
+                   class="nav-link">
+
+                    Our Story
+
+                </a>
+
+            </li>
+
+
+            <li class="nav-item">
+
+                <a href="/gallery"
+                   class="nav-link">
+
+                    Gallery
+
+                </a>
+
+            </li>
+
+
+            <li class="nav-item">
+
+                <a href="/contact"
+                   class="nav-link">
+
+                    Contact
+
+                </a>
+
+            </li>
+
+        </ul>
+
+
+        <!-- =================================================
+             RIGHT SIDE
+        ================================================== -->
+
+        <div class="nav-action">
+
+            <a href="/login"
+               class="contact-button"
+               id="loginButton">
+
+                Login
+
+            </a>
+
+
+            <!--
+                This can connect to your
+                existing chat button later.
+            -->
+
+            <button
+                class="nav-chat-button"
+                id="navChatButton"
+                type="button"
+                aria-label="Open Chat">
+
+                💬
+
+            </button>
+
+        </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="container">
+        <header>
+            <h1>📬 Contact Us</h1>
+            <p>We'd love to hear from you. Fill out the form below.</p>
+        </header>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, msg in messages %}
+                    <div class="flash {{ category }}">{{ msg }}</div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+        {% block content %}{% endblock %}
+
+        <footer>
+            <p>&copy; 2025 Your Company. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/navbar.js') }}"></script>
+
+</body>
+</html>

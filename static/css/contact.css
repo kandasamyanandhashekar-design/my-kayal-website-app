@@ -1,0 +1,202 @@
+
+
+/* =====================================================
+   BOX-SIZING — scoped to contact form only
+===================================================== */
+.container,
+.container *,
+.container input,
+.container select,
+.container textarea,
+.container button,
+.container .btn {
+    box-sizing: border-box !important;
+    max-width: 100% !important;
+}
+
+/* =====================================================
+   BASE RESET
+===================================================== */
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+/* =====================================================
+   BODY
+===================================================== */
+body {
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+/* =====================================================
+   CONTACT CARD — moved down 150px
+===================================================== */
+.container {
+    background: #ffffff;
+    max-width: 520px;
+    width: 520px;
+    margin: 150px auto 20px;        /* 👈 was 120px → 150px */
+    padding: 20px 28px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+/* =====================================================
+   HEADER
+===================================================== */
+header h1 {
+    margin: 0 0 3px;
+    font-size: 20px;
+    color: #333;
+}
+
+header p {
+    margin: 0 0 10px;
+    color: #666;
+    font-size: 12.5px;
+}
+
+/* =====================================================
+   FORM FIELDS
+===================================================== */
+.form-group {
+    margin-bottom: 8px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+label {
+    font-weight: 600;
+    font-size: 12px;
+    color: #444;
+    margin-bottom: 3px;
+}
+
+.req {
+    color: #e63946;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1.5px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 13px;
+    font-family: inherit;
+    outline: none;
+    transition: border 0.2s, box-shadow 0.2s;
+    box-sizing: border-box;
+    display: block;
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.18);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 55px;
+}
+
+.error {
+    color: #e63946;
+    font-size: 11.5px;
+    margin-top: 3px;
+}
+
+/* =====================================================
+   BUTTON
+===================================================== */
+.btn {
+    background: #667eea;
+    color: #fff;
+    padding: 9px 18px;
+    border: none;
+    border-radius: 8px;
+    font-size: 13.5px;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 3px;
+    transition: background 0.2s;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.btn:hover {
+    background: #5a6fd8;
+}
+
+/* =====================================================
+   FLASH MESSAGES
+===================================================== */
+.flash {
+    padding: 9px 11px;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    font-size: 12.5px;
+    box-sizing: border-box;
+}
+
+.flash.success {
+    background: #d1fae5;
+    color: #065f46;
+    border-left: 4px solid #10b981;
+}
+
+.flash.error {
+    background: #fee2e2;
+    color: #991b1b;
+    border-left: 4px solid #ef4444;
+}
+
+/* =====================================================
+   SUCCESS PAGE
+===================================================== */
+.success-box {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.success-box h2 {
+    color: #10b981;
+    font-size: 20px;
+    margin: 0 0 10px;
+}
+
+.success-box p {
+    font-size: 13.5px;
+    color: #555;
+    margin: 0 0 16px;
+}
+
+/* =====================================================
+   HIDE FOOTER
+===================================================== */
+footer {
+    display: none !important;
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+@media (max-width: 600px) {
+    .container {
+        width: calc(100% - 32px);
+        max-width: calc(100% - 32px);
+        padding: 18px 20px;
+        margin: 130px auto 20px;
+    }
+}

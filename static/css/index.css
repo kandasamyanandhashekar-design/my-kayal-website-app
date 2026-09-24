@@ -1,0 +1,1017 @@
+
+
+
+
+html,
+
+body {
+
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100%;
+
+}
+
+
+
+/*3D CAROUSEL CONTAINER */
+
+.slider-container {
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    perspective: 1500px;
+
+    position: relative;
+
+    overflow: visible;
+
+
+    margin: 0 auto;
+
+
+    background: linear-gradient(
+        135deg,
+        #07111f,
+        #102a43,
+        #07111f
+    );
+
+} 
+
+
+/* ROTATING 3D SLIDER */
+
+.slider {
+    position: absolute;
+
+    width: 280px;
+    height: 360px;
+
+    left: 28%;
+    top:  50%;
+
+    transform: translate(-50%, -50%);
+
+    transform-style: preserve-3d;
+
+    transform-origin: center center;
+
+    /* animation: rotate 15s infinite linear; */
+
+}
+
+
+/* EACH IMAGE */
+
+.slide {
+    position: absolute;
+
+    width: 280px;
+    height: 360px;
+
+    left: 0;
+    top: 0;
+
+    /* transform-origin: center center; */
+
+    border: 4px solid white;
+    border-radius: 15px;
+
+    overflow: hidden;
+
+    backface-visibility: visible;
+
+    box-sizing: border-box;
+
+}
+ 
+
+/* IMAGE */
+
+.slide img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+
+/* POSITION EACH IMAGE AROUND THE 3D CYLINDER */
+
+.slide:nth-child(1) {
+    transform: 
+        rotateY(0deg)
+        translateZ(200px);
+}
+
+.slide:nth-child(2) {
+    
+    transform: 
+        rotateY(90deg) 
+        translateZ(200px);
+}
+
+.slide:nth-child(3) {
+    transform: 
+        rotateY(180deg) 
+        translateZ(200px);
+}
+
+.slide:nth-child(4) {
+    transform: 
+        rotateY(270deg) 
+        translateZ(200px);
+}
+
+
+
+
+/* ==============================
+    TYPING CONTENT - ROTATION 
+    ============================= */
+
+@keyframes rotate {
+
+    from {
+        transform:
+        translate(-50%, -50%)
+        rotateY(0deg);
+    }
+
+    to {
+        transform: 
+        translate(-50%, -50%)
+        rotateY(360deg);
+    }
+
+}
+
+
+
+
+/* =====================================================
+   TYPING CONTENT-RIGHT SIDE
+===================================================== */
+
+.typing-content {
+    position: absolute;
+
+    left: 62%;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: 400px;
+
+    z-index: 10;
+
+    text-align: left;
+}
+
+
+/* =====================================================
+   TITLE
+===================================================== */
+
+#typingTitle {
+    margin: 0 0 20px 0;
+
+    font-size: 42px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    color: #ffffff;
+
+    background: linear-gradient(
+        90deg,
+        #ffffff,
+        #7dd3fc,
+        #38bdf8
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+
+    /* text-shadow:
+        0 0 15px rgba(56, 189, 248, 0.4); */
+
+    background-clip: text;
+}
+
+
+/* =====================================================
+   DESCRIPTION
+===================================================== */
+
+#typingText {
+    margin: 0;
+
+    font-size: 20px;
+
+    line-height: 1.7;
+
+    letter-spacing: 1px;
+
+    color: #e2e8f0 !important;
+
+    min-height: 100px;
+
+    white-space: pre-wrap;
+}
+
+
+/* =====================================================
+   TYPING CURSOR
+===================================================== */
+
+#typingText::after {
+    content: "|";
+
+    margin-left: 4px;
+
+    color: #38bdf8;
+
+    animation: blinkCursor 0.7s infinite;
+}
+
+
+/*=====================================================
+   CURSOR ANIMATION
+=====================================================*/
+
+
+    @keyframes blinkCursor {
+
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+
+}
+
+
+
+/* =====================================================
+   SLIDER 1 EXIT ANIMATION
+===================================================== */
+
+.slider-one-exit {
+
+    animation:
+        sliderOneDisappear
+        1.2s
+        ease-in-out
+        forwards !important;
+}
+
+
+@keyframes sliderOneDisappear {
+
+    0% {
+
+        opacity: 1;
+
+        transform:
+            translate(-50%, -50%)
+            scale(1)
+            rotateY(0deg);
+    }
+
+    100% {
+
+        opacity: 0;
+
+        transform:
+            translate(-50%, -50%)
+            scale(0.4)
+            rotateY(-90deg);
+    }
+}
+
+
+
+
+
+
+
+-----------------SECOND SLIDER-------------
+
+
+/* =====================================================
+   SLIDER 2 WRAPPER
+   ===================================================== */
+
+.slider-wrapper-two {
+    opacity: 0;
+
+    visibility: hidden;
+
+    z-index: 6;
+}
+
+
+/* =====================================================
+    SLIDER 2  ROTATING 3D SLIDER
+   ===================================================== */
+
+.slider-two {
+
+    position: absolute;
+
+    width: 280px;
+    height: 360px;
+
+    left: 28%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    transform-style: preserve-3d;
+
+    transform-origin: center center;
+
+    transition: transform 1.2s ease-in-out;
+
+}
+
+
+/* =====================================================
+   SLIDER 2 IMAGES
+   ===================================================== */
+
+.slider-two-slide {
+
+    position: absolute;
+
+    width: 280px;
+    height: 360px;
+
+    left: 0;
+    top: 0;
+
+    border: 4px solid white;
+
+    border-radius: 15px;
+
+    overflow: hidden;
+
+    box-sizing: border-box;
+
+    backface-visibility: visible;
+}
+
+
+/* =====================================================
+   SLIDER 2 IMAGE
+   ===================================================== */
+
+.slider-two-slide img {
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+
+
+/* =====================================================
+   SLIDER 2 — 3 IMAGE 3D POSITION
+   ===================================================== */
+
+.slider-two-slide:nth-child(1) {
+
+    transform:
+        rotateY(0deg)
+        translateZ(200px);
+}
+
+
+.slider-two-slide:nth-child(2) {
+
+    transform:
+        rotateY(120deg)
+        translateZ(200px);
+}
+
+
+.slider-two-slide:nth-child(3) {
+
+    transform:
+        rotateY(240deg)
+        translateZ(200px);
+}
+
+
+/* =====================================================
+   SLIDER 2 ENTRY
+===================================================== */
+
+.slider-two-enter {
+
+    animation:
+        sliderTwoAppear
+        1.2s
+        ease-in-out
+        forwards;
+
+}
+
+
+
+
+/* =====================================================
+   SLIDER 2 ENTRY ANIMATION
+===================================================== */
+
+@keyframes sliderTwoAppear {
+
+    0% {
+
+        opacity: 0;
+
+        transform:
+            translate(-50%, -50%)
+            scale(1.5)
+            rotateY(90deg);
+
+    }
+
+    100% {
+
+        opacity: 1;
+
+        transform:
+            translate(-50%, -50%)
+            scale(1)
+            rotateY(0deg);
+
+    }
+
+}
+
+
+/* =====================================================
+   SLIDER 2 3D ROTATION
+===================================================== */
+
+@keyframes rotateSliderTwo {
+
+    from {
+
+        transform:
+            translate(-50%, -50%)
+            rotateY(0deg);
+
+    }
+
+    to {
+
+        transform:
+            translate(-50%, -50%)
+            rotateY(360deg);
+
+    }
+
+}
+
+
+
+
+
+
+/* =====================================================
+   SLIDER 2 ENTRY ANIMATION
+===================================================== */
+
+.slider-two-enter {
+
+    animation:
+        sliderTwoAppear
+        1.2s
+        ease-in-out
+        forwards;
+}
+
+
+@keyframes sliderTwoAppear {
+
+    0% {
+
+        opacity: 0;
+
+        transform:
+            translate(-50%, -50%)
+            scale(1.5)
+            rotateY(90deg);
+    }
+
+    100% {
+
+        opacity: 1;
+
+        transform:
+            translate(-50%, -50%)
+            scale(1)
+            rotateY(0deg);
+    }
+} 
+
+
+
+/* =====================================================
+   SLIDER 1 EXIT ANIMATION
+===================================================== */
+
+.slider-two-exit {
+
+    animation:
+        sliderTwoDisappear
+        1.2s
+        ease-in-out
+        forwards !important;
+}
+
+
+@keyframes slidertwoDisappear {
+
+    0% {
+
+        opacity: 1;
+
+        transform:
+            translate(-50%, -50%)
+            scale(1)
+            rotateY(0deg);
+    }
+
+    100% {
+
+        opacity: 0;
+
+        transform:
+            translate(-50%, -50%)
+            scale(0.4)
+            rotateY(-90deg);
+    }
+}
+
+
+
+
+
+
+
+/*----------------Third slider------------*/
+
+
+
+
+/* =====================================================
+   SLIDER 3 WRAPPER
+===================================================== */
+
+.slider-wrapper-three {
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    z-index: 7;
+
+    position: absolute;
+
+    inset: 0;
+
+    transition: 
+        opacity 0.4s ease,
+        visibility 0.4s ease;   
+}
+
+
+.slider-wrapper-three.slider-three-visible {
+
+    opacity: 1;
+
+    visibility: visible;
+}
+
+/* =====================================================
+   SLIDER 3 ROTATING 3D SLIDER
+===================================================== */
+
+.slider-three {
+
+    position: absolute;
+
+    width: 280px;
+    height: 360px;
+
+    left: 28%;
+    top: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    transform-style: preserve-3d;
+
+    transform-origin: center center;
+
+    /* IMPORTANT:
+       This creates the smooth 3D rotation */
+
+    transition:
+        transform 1.2s ease-in-out,
+        opacity 0.6s ease;
+
+}
+
+
+/* =====================================================
+   SLIDER 3 IMAGES
+===================================================== */
+
+.slider-three-slide {
+
+    position: absolute;
+
+    width: 280px;
+    height: 360px;
+
+    left: 0;
+    top: 0;
+
+    border: 4px solid white;
+
+    border-radius: 15px;
+
+    overflow: hidden;
+
+    box-sizing: border-box;
+
+    backface-visibility: visible;
+
+}
+
+
+/* =====================================================
+   SLIDER 3 IMAGE
+===================================================== */
+
+.slider-three-slide img {
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+}
+
+
+/* =====================================================
+   SLIDER 3 — 3 IMAGE 3D POSITIONS
+===================================================== */
+
+/* IMAGE 1 */
+
+.slider-three-slide:nth-child(1) {
+
+    transform:
+        rotateY(0deg)
+        translateZ(200px);
+
+}
+
+
+/* IMAGE 2 */
+
+.slider-three-slide:nth-child(2) {
+
+    transform:
+        rotateY(180deg)
+        translateZ(200px);
+
+}
+
+
+/* IMAGE 3 */
+
+/* .slider-three-slide:nth-child(3) {
+
+    transform:
+        rotateY(240deg)
+        translateZ(200px);
+
+} */
+
+
+/* =====================================================
+   SLIDER 3 ENTRY
+===================================================== */
+
+.slider-three-enter {
+
+    animation:
+        sliderThreeAppear
+        1.2s
+        ease-in-out
+        forwards;
+
+}
+
+
+/* =====================================================
+   SLIDER 3 ENTRY ANIMATION
+===================================================== */
+
+@keyframes sliderThreeAppear {
+
+    0% {
+
+        opacity: 0;
+
+        transform:
+            translate(-50%, -50%)
+            scale(1.5)
+            rotateY(90deg);
+
+    }
+
+    100% {
+
+        opacity: 1;
+
+        transform:
+            translate(-50%, -50%)
+            scale(1)
+            rotateY(0deg);
+
+    }
+
+}
+
+
+/* =====================================================
+   SLIDER 3 3D ROTATION
+===================================================== */
+
+@keyframes rotateSliderThree {
+
+    from {
+
+        transform:
+            translate(-50%, -50%)
+            rotateY(0deg);
+
+    }
+
+    to {
+
+        transform:
+            translate(-50%, -50%)
+            rotateY(360deg);
+
+    }
+
+}
+
+
+
+
+
+
+/*----------------Fourth slider------------*/
+
+
+
+
+/* =====================================================
+   SLIDER 4 WRAPPER
+===================================================== */
+
+.slider-wrapper-four {
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    z-index: 7;
+
+    position: absolute;
+
+    inset: 0;
+
+    transition: 
+        opacity 0.4s ease,
+        visibility 0.4s ease;   
+}
+
+
+.slider-wrapper-four.slider-four-visible {
+
+    opacity: 1;
+
+    visibility: visible;
+}
+
+/* =====================================================
+   SLIDER 4 ROTATING 3D SLIDER
+===================================================== */
+
+.slider-four {
+
+    position: absolute;
+
+    width: 280px;
+    height: 360px;
+
+    left: 28%;
+    top: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    transform-style: preserve-3d;
+
+    transform-origin: center center;
+
+    /* IMPORTANT:
+       This creates the smooth 3D rotation */
+
+    transition:
+        transform 1.2s ease-in-out,
+        opacity 0.6s ease;
+
+}
+
+
+/* =====================================================
+   SLIDER 4 IMAGES
+===================================================== */
+
+.slider-four-slide {
+
+    position: absolute;
+
+    width: 280px;
+    height: 360px;
+
+    left: 0;
+    top: 0;
+
+    border: 4px solid white;
+
+    border-radius: 15px;
+
+    overflow: hidden;
+
+    box-sizing: border-box;
+
+    backface-visibility: visible;
+
+}
+
+
+/* =====================================================
+   SLIDER 4 IMAGE
+===================================================== */
+
+.slider-four-slide img {
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+}
+
+
+/* =====================================================
+   SLIDER 4 — 2 IMAGE 3D POSITIONS
+===================================================== */
+
+/* IMAGE 1 */
+
+.slider-four-slide:nth-child(1) {
+
+    transform:
+        rotateY(0deg)
+        translateZ(200px);
+
+}
+
+
+/* IMAGE 2 */
+
+.slider-four-slide:nth-child(2) {
+
+    transform:
+        rotateY(180deg)
+        translateZ(200px);
+
+}
+
+
+/* IMAGE 3 */
+
+/* .slider-three-slide:nth-child(3) {
+
+    transform:
+        rotateY(240deg)
+        translateZ(200px);
+
+} */
+
+
+/* =====================================================
+   SLIDER 4 ENTRY
+===================================================== */
+
+.slider-four-enter {
+
+    animation:
+        sliderThreeAppear
+        1.2s
+        ease-in-out
+        forwards;
+
+}
+
+
+/* =====================================================
+   SLIDER 4 ENTRY ANIMATION
+===================================================== */
+
+@keyframes sliderfourAppear {
+
+    0% {
+
+        opacity: 0;
+
+        transform:
+            translate(-50%, -50%)
+            scale(1.5)
+            rotateY(90deg);
+
+    }
+
+    100% {
+
+        opacity: 1;
+
+        transform:
+            translate(-50%, -50%)
+            scale(1)
+            rotateY(0deg);
+
+    }
+
+}
+
+
+/* =====================================================
+   SLIDER 4 3D ROTATION
+===================================================== */
+
+@keyframes rotateSliderThree {
+
+    from {
+
+        transform:
+            translate(-50%, -50%)
+            rotateY(0deg);
+
+    }
+
+    to {
+
+        transform:
+            translate(-50%, -50%)
+            rotateY(360deg);
+
+    }
+
+}

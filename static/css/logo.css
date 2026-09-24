@@ -1,0 +1,554 @@
+/* =====================================================
+   KAYAL VENTURERS
+   CINEMATIC LOGO INTRO
+===================================================== */
+
+#logoIntro {
+
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at center,
+            /* #173d25 0%,
+            #07150c 45%,
+            #020604 100% */
+
+            /* #1c173d 0%,
+            #0a0715 45%,
+            #020604 100%  */
+
+            #07111f,
+            #102a43,
+            #07111f
+        );
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    z-index: 99999;
+
+    overflow: hidden;
+
+    opacity: 1;
+
+    visibility: visible;
+}
+
+
+/* =====================================================
+   LOGO CONTENT
+===================================================== */
+
+.logo-intro-content {
+
+    position: relative;
+
+    width: 420px;
+
+    max-width: 80vw;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    animation: logoCinemaIn 2.2s ease-out forwards;
+
+}
+
+
+/* =====================================================
+   LOGO
+===================================================== */
+
+.intro-logo {
+
+    position: relative;
+
+    width: 260px;
+
+    max-width: 70vw;
+
+    height: auto;
+
+    opacity: 0;
+
+    transform:
+        scale(0.55)
+        translateY(20px);
+
+    filter:
+        drop-shadow(0 0 0px rgba(255,255,255,0));
+
+    animation:
+        logoAppear 2.2s
+        cubic-bezier(.16,1,.3,1)
+        0.3s
+        forwards;
+
+}
+
+
+/* =====================================================
+   LIGHT BEHIND LOGO
+===================================================== */
+
+.logo-light {
+
+    position: absolute;
+
+    width: 220px;
+    height: 220px;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            /* rgba(255,255,255,0.30) 0%,
+            rgba(120,255,170,0.15) 25%,
+            rgba(0,0,0,0) 70% */
+
+            rgba(255,255,255,1) 0%,
+            rgba(255,255,255,0.75) 15%,
+            rgba(255,255,255,0.35) 35%,
+            rgba(255,255,255,0) 70%
+        );
+
+    filter: blur(20px);
+
+    opacity: 0;
+
+    animation:
+        logoLight 2.5s
+        ease-out
+        0.2s
+        forwards;
+
+}
+
+
+/* =====================================================
+   MOVING CINEMATIC LIGHT
+===================================================== */
+
+.logo-intro-content::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 4px;
+
+    height: 420px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            transparent,
+            rgba(255,255,255,0.9),
+            transparent
+        );
+
+    filter: blur(3px);
+
+    transform:
+        rotate(25deg)
+        translateX(-300px);
+
+    opacity: 0;
+
+    animation:
+        cinematicLight 2.5s
+        ease-in-out
+        1s
+        forwards;
+
+}
+
+
+/* =====================================================
+   LINE
+===================================================== */
+
+.logo-line {
+
+    width: 0;
+
+    height: 1px;
+
+    margin-top: 18px;
+
+    background:
+        linear-gradient(
+            to right,
+            transparent,
+            rgba(255,255,255,0.9),
+            transparent
+        );
+
+    box-shadow:
+        0 0 10px rgba(255,255,255,0.5);
+
+    animation:
+        lineReveal 1.2s
+        ease-out
+        1.8s
+        forwards;
+
+}
+
+
+/* =====================================================
+   COMPANY NAME
+===================================================== */
+
+.intro-text {
+
+    margin-top: 16px;
+
+    margin-bottom: 0;
+
+    color: white;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 15px;
+
+    letter-spacing: 6px;
+
+    font-weight: 500;
+
+    opacity: 0;
+
+    transform: translateY(15px);
+
+    animation:
+        textReveal 1.2s
+        ease-out
+        2s
+        forwards;
+
+}
+
+
+/* =====================================================
+   LOGO ENTRY
+===================================================== */
+
+@keyframes logoCinemaIn {
+
+    0% {
+
+        transform:
+            scale(0.8);
+
+        opacity: 0;
+
+    }
+
+    40% {
+
+        opacity: 1;
+
+    }
+
+    100% {
+
+        transform:
+            scale(1);
+
+        opacity: 1;
+
+    }
+
+}
+
+
+/* =====================================================
+   LOGO APPEAR
+===================================================== */
+
+@keyframes logoAppear {
+
+    0% {
+
+        opacity: 0;
+
+        transform:
+            scale(0.55)
+            translateY(20px);
+
+        filter:
+            brightness(0.2)
+            drop-shadow(0 0 0px transparent);
+
+    }
+
+    45% {
+
+        opacity: 1;
+
+        filter:
+            brightness(1.4)
+            drop-shadow(
+                0 0 25px
+                rgba(255,255,255,0.5)
+            );
+
+    }
+
+    100% {
+
+        opacity: 1;
+
+        transform:
+            scale(1)
+            translateY(0);
+
+        filter:
+            brightness(1)
+            drop-shadow(
+                0 0 18px
+                rgba(255,255,255,0.25)
+            );
+
+    }
+
+}
+
+
+/* =====================================================
+   LIGHT GLOW
+===================================================== */
+
+@keyframes logoLight {
+
+    0% {
+
+        opacity: 0;
+
+        transform:
+            translate(-50%, -50%)
+            scale(0.3);
+
+    }
+
+    40% {
+
+        opacity: 1;
+
+        transform:
+            translate(-50%, -50%)
+            scale(1.2);
+
+    }
+
+    100% {
+
+        opacity: 0.35;
+
+        transform:
+            translate(-50%, -50%)
+            scale(1);
+
+    }
+
+}
+
+
+/* =====================================================
+   CINEMATIC LIGHT SWEEP
+===================================================== */
+
+@keyframes cinematicLight {
+
+    0% {
+
+        opacity: 0;
+
+        transform:
+            rotate(25deg)
+            translateX(-300px);
+
+    }
+
+    20% {
+
+        opacity: 1;
+
+    }
+
+    70% {
+
+        opacity: 0.8;
+
+    }
+
+    100% {
+
+        opacity: 0;
+
+        transform:
+            rotate(25deg)
+            translateX(300px);
+
+    }
+
+}
+
+
+/* =====================================================
+   LINE
+===================================================== */
+
+@keyframes lineReveal {
+
+    0% {
+
+        width: 0;
+
+        opacity: 0;
+
+    }
+
+    100% {
+
+        width: 280px;
+
+        opacity: 1;
+
+    }
+
+}
+
+
+/* =====================================================
+   TEXT
+===================================================== */
+
+@keyframes textReveal {
+
+    0% {
+
+        opacity: 0;
+
+        transform:
+            translateY(15px);
+
+    }
+
+    100% {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+/* =====================================================
+   FINAL EXIT
+===================================================== */
+
+#logoIntro.logo-exit {
+
+    animation:
+        logoIntroExit 1.4s
+        cubic-bezier(.7,0,.3,1)
+        forwards;
+
+}
+
+
+@keyframes logoIntroExit {
+
+    0% {
+
+        opacity: 1;
+
+        transform:
+            scale(1);
+
+        filter:
+            blur(0px);
+
+    }
+
+    60% {
+
+        opacity: 1;
+
+        transform:
+            scale(1.08);
+
+        filter:
+            blur(1px);
+
+    }
+
+    100% {
+
+        opacity: 0;
+
+        transform:
+            scale(1.25);
+
+        filter:
+            blur(8px);
+
+        visibility: hidden;
+
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .intro-logo {
+
+        width: 210px;
+
+    }
+
+    .intro-text {
+
+        font-size: 11px;
+
+        letter-spacing: 4px;
+
+    }
+
+    .logo-line {
+
+        max-width: 220px;
+
+    }
+
+}

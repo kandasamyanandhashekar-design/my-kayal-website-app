@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}Message Sent{% endblock %}
+
+{% block content %}
+<div class="success-box">
+    <h2>✅ Message Sent!</h2>
+    <p>Thanks for reaching out. We'll get back to you shortly.</p>
+    <a href="{{ url_for('contact') }}" class="btn">Send Another</a>
+</div>
+{% endblock %}

@@ -1,0 +1,70 @@
+/* .fish-animation {
+    width: 300px;
+    height: 300px;
+    object-fit: contain;
+    display: block;
+    background: transparent;
+} */
+
+
+/* .container {
+    position: relative;
+
+}
+
+.fish-animation {
+    position: absolute;
+    right: 80px;
+    top: 130px;
+    width: 300px;
+    height: 300px;
+    object-fit: contain;
+    display: block;
+    background: transparent;
+} */
+
+
+/* .container {
+    position: relative;
+}
+
+.fish-animation {
+    position: absolute;
+
+    right: 80px;
+    top: 130px;
+
+    width: 300px;
+    height: 300px;
+
+    object-fit: contain;
+
+    display: block;
+
+    background: transparent;
+
+    z-index: 100;
+    pointer-events: none;
+} */
+
+
+.container {
+    position: relative;
+}
+
+.fish-animation {
+    position: absolute;
+    right: 80px;
+    top: 130px;
+
+    width: 300px;
+    height: 300px;
+
+    object-fit: contain;
+    display: block;
+
+    background: transparent;
+
+    z-index: 100;
+    pointer-events: none;
+}

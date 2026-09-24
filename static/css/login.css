@@ -1,0 +1,1498 @@
+/* =====================================================
+   KAYAL VENTURERS
+   MAGICAL LOGIN PAGE
+===================================================== */
+
+
+
+
+
+/* =====================================================
+   ROOT VARIABLES
+===================================================== */
+
+:root {
+
+    --background-color: #05020d;
+
+    --gold: #ffd76a;
+
+    --gold-light: #fff4b0;
+
+    --purple: #9b5cff;
+
+    --white: #ffffff;
+
+}
+
+
+/* =====================================================
+   GLOBAL RESET
+===================================================== */
+/* 
+* {
+
+    margin: 0;
+
+    padding: 0;
+
+    box-sizing: border-box;
+
+} */
+
+
+html,
+body {
+
+    width: 100%;
+
+    min-height: 100%;
+
+    margin: 0;
+
+    padding: 0;
+
+    /* overflow: hidden; */
+
+}
+
+
+body {
+
+    /* font-family:
+        Arial,
+        Helvetica,
+        sans-serif; */
+
+    background:
+        var(--background-color);
+
+    color:
+        var(--white);
+
+    padding-top: 120px;
+
+    min-height: 100vh;
+
+}
+
+
+/* =====================================================
+   MAGICAL BACKGROUND
+===================================================== */
+
+.magic-background {
+
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    overflow: hidden;
+
+    background:
+
+        radial-gradient(
+            circle at 50% 45%,
+            rgba(120,60,255,0.16),
+            transparent 35%
+        ),
+
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(255,190,70,0.08),
+            transparent 30%
+        ),
+
+        var(--background-color);
+
+    z-index: 0;
+
+}
+
+
+/* =====================================================
+   STARS
+===================================================== */
+
+.stars {
+
+    position: absolute;
+
+    inset: 0;
+
+    background-image:
+
+        radial-gradient(
+            white 1px,
+            transparent 1px
+        ),
+
+        radial-gradient(
+            rgba(255,255,255,0.5) 1px,
+            transparent 1px
+        );
+
+    background-size:
+        100px 100px,
+        170px 170px;
+
+    background-position:
+        0 0,
+        40px 60px;
+
+    opacity: 0.35;
+
+    animation:
+        starMove 20s linear infinite;
+
+}
+
+
+@keyframes starMove {
+
+    from {
+
+        transform:
+            translateY(0);
+
+    }
+
+    to {
+
+        transform:
+            translateY(-100px);
+
+    }
+
+}
+
+
+/* =====================================================
+   MAGIC ORBS
+===================================================== */
+
+.magic-orb {
+
+    position: absolute;
+
+    border-radius: 50%;
+
+    filter: blur(50px);
+
+    opacity: 0.25;
+
+    animation:
+        floatingOrb 8s ease-in-out infinite;
+
+}
+
+
+/* =====================================================
+   MAGIC ORB 1
+===================================================== */
+
+.orb-one {
+
+    width: 250px;
+
+    height: 250px;
+
+    background:
+        #7b35ff;
+
+    left: 5%;
+
+    top: 15%;
+
+}
+
+
+/* =====================================================
+   MAGIC ORB 2
+===================================================== */
+
+.orb-two {
+
+    width: 300px;
+
+    height: 300px;
+
+    background:
+        #ffb52e;
+
+    right: 5%;
+
+    bottom: 10%;
+
+    animation-delay:
+        2s;
+
+}
+
+
+/* =====================================================
+   MAGIC ORB 3
+===================================================== */
+
+.orb-three {
+
+    width: 180px;
+
+    height: 180px;
+
+    background:
+        #4e9cff;
+
+    right: 30%;
+
+    top: 5%;
+
+    animation-delay:
+        4s;
+
+}
+
+
+/* =====================================================
+   ORB ANIMATION
+===================================================== */
+
+@keyframes floatingOrb {
+
+    0%,
+    100% {
+
+        transform:
+            translate(0,0);
+
+    }
+
+    50% {
+
+        transform:
+            translate(30px,-40px);
+
+    }
+
+}
+
+
+/* =====================================================
+   LAMP AREA
+===================================================== */
+
+.lamp-area {
+
+    position: absolute;
+
+    left: 12%;
+
+    top: 50%;
+
+    width: 420px;
+
+    height: 500px;
+
+    transform:
+        translateY(-50%);
+
+    z-index: 5;
+
+}
+
+
+/* =====================================================
+   LAMP GLOW
+===================================================== */
+
+.lamp-glow {
+
+    position: absolute;
+
+    width: 350px;
+
+    height: 350px;
+
+    left: 50%;
+
+    top: 45%;
+
+    transform:
+        translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background:
+
+        radial-gradient(
+            circle,
+            rgba(255,240,150,0.95) 0%,
+            rgba(255,210,70,0.45) 20%,
+            rgba(255,180,30,0.15) 40%,
+            transparent 72%
+        );
+
+    filter:
+        blur(15px);
+
+    animation:
+        lampGlow 2.5s ease-in-out infinite;
+
+}
+
+
+/* =====================================================
+   LAMP GLOW ANIMATION
+===================================================== */
+
+@keyframes lampGlow {
+
+    0%,
+    100% {
+
+        opacity: 0.65;
+
+        transform:
+            translate(-50%, -50%)
+            scale(0.95);
+
+    }
+
+    50% {
+
+        opacity: 1;
+
+        transform:
+            translate(-50%, -50%)
+            scale(1.12);
+
+    }
+
+}
+
+
+/* =====================================================
+   MAGIC LAMP
+===================================================== */
+
+.magic-lamp {
+
+    position: absolute;
+
+    width: 250px;
+
+    height: 210px;
+
+    left: 50%;
+
+    top: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+}
+
+
+/* =====================================================
+   LAMP BODY
+===================================================== */
+
+.lamp-body {
+
+    position: absolute;
+
+    width: 170px;
+
+    height: 110px;
+
+    left: 45px;
+
+    top: 55px;
+
+    border-radius:
+        50% 50% 42% 42%;
+
+    background:
+
+        linear-gradient(
+            145deg,
+            #fff1a0,
+            #d99b25 35%,
+            #8a4f08 75%,
+            #3d2104
+        );
+
+    box-shadow:
+
+        inset
+        -12px -15px 20px
+        rgba(0,0,0,0.35),
+
+        inset
+        10px 8px 15px
+        rgba(255,255,255,0.45),
+
+        0 15px 25px
+        rgba(0,0,0,0.5);
+
+}
+
+
+/* =====================================================
+   LAMP LIGHT
+===================================================== */
+
+.lamp-light {
+
+    position: absolute;
+
+    width: 70px;
+
+    height: 70px;
+
+    left: 50%;
+
+    top: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background:
+
+        radial-gradient(
+            circle,
+            #ffffff 0%,
+            #fff5a5 25%,
+            #ffd34d 50%,
+            transparent 75%
+        );
+
+    filter:
+        blur(3px);
+
+    animation:
+        flameLight 1.5s ease-in-out infinite;
+
+}
+
+
+/* =====================================================
+   FLAME LIGHT ANIMATION
+===================================================== */
+
+@keyframes flameLight {
+
+    0%,
+    100% {
+
+        transform:
+            translate(-50%, -50%)
+            scale(0.9);
+
+        opacity:
+            0.75;
+
+    }
+
+    50% {
+
+        transform:
+            translate(-50%, -50%)
+            scale(1.15);
+
+        opacity:
+            1;
+
+    }
+
+}
+
+
+/* =====================================================
+   LAMP TOP
+===================================================== */
+
+.lamp-top {
+
+    position: absolute;
+
+    width: 120px;
+
+    height: 25px;
+
+    left: 70px;
+
+    top: 35px;
+
+    border-radius: 50%;
+
+    background:
+
+        linear-gradient(
+            to bottom,
+            #fff1a0,
+            #b87512
+        );
+
+}
+
+
+/* =====================================================
+   LAMP SPOUT
+===================================================== */
+
+.lamp-spout {
+
+    position: absolute;
+
+    width: 100px;
+
+    height: 35px;
+
+    left: -20px;
+
+    top: 70px;
+
+    border-radius:
+        80% 20% 20% 80%;
+
+    transform:
+        rotate(-12deg);
+
+    background:
+
+        linear-gradient(
+            to bottom,
+            #f7d76d,
+            #a9680c
+        );
+
+}
+
+
+/* =====================================================
+   LAMP HANDLE
+===================================================== */
+
+.lamp-handle {
+
+    position: absolute;
+
+    width: 90px;
+
+    height: 100px;
+
+    right: 5px;
+
+    top: 55px;
+
+    border:
+        12px solid #bd7d18;
+
+    border-left:
+        0;
+
+    border-radius:
+        0 60px 60px 0;
+
+    box-shadow:
+
+        inset
+        -5px 0 5px
+        rgba(255,255,255,0.25);
+
+}
+
+
+/* =====================================================
+   LAMP BASE
+===================================================== */
+
+.lamp-base {
+
+    position: absolute;
+
+    width: 190px;
+
+    height: 25px;
+
+    left: 30px;
+
+    bottom: 25px;
+
+    border-radius: 50%;
+
+    background:
+
+        linear-gradient(
+            to bottom,
+            #e7b53d,
+            #704108
+        );
+
+    box-shadow:
+
+        0 10px 20px
+        rgba(0,0,0,0.5);
+
+}
+
+
+/* =====================================================
+   MAGICAL SMOKE
+===================================================== */
+
+.magic-smoke {
+
+    position: absolute;
+
+    width: 25px;
+
+    height: 25px;
+
+    border-radius: 50%;
+
+    background:
+
+        radial-gradient(
+            circle,
+            rgba(255,255,255,0.8),
+            rgba(190,130,255,0.3),
+            transparent
+        );
+
+    filter:
+        blur(4px);
+
+    opacity:
+        0;
+
+    left:
+        205px;
+
+    top:
+        110px;
+
+}
+
+
+/* =====================================================
+   SMOKE 1
+===================================================== */
+
+.smoke-one {
+
+    animation:
+        smoke 4s ease-in-out infinite;
+
+}
+
+
+/* =====================================================
+   SMOKE 2
+===================================================== */
+
+.smoke-two {
+
+    animation:
+        smoke 4s ease-in-out 1.3s infinite;
+
+}
+
+
+/* =====================================================
+   SMOKE 3
+===================================================== */
+
+.smoke-three {
+
+    animation:
+        smoke 4s ease-in-out 2.6s infinite;
+
+}
+
+
+/* =====================================================
+   SMOKE ANIMATION
+===================================================== */
+
+@keyframes smoke {
+
+    0% {
+
+        opacity:
+            0;
+
+        transform:
+            translate(0,0)
+            scale(0.5);
+
+    }
+
+    20% {
+
+        opacity:
+            0.8;
+
+    }
+
+    100% {
+
+        opacity:
+            0;
+
+        transform:
+            translate(40px,-130px)
+            scale(2);
+
+    }
+
+}
+
+
+/* =====================================================
+   LIGHT RAYS
+===================================================== */
+
+.light-ray {
+
+    position: absolute;
+
+    left: 50%;
+
+    top: 35%;
+
+    width: 3px;
+
+    height: 300px;
+
+    transform-origin:
+        center bottom;
+
+    background:
+
+        linear-gradient(
+            to top,
+            rgba(255,230,120,0.5),
+            transparent
+        );
+
+    filter:
+        blur(3px);
+
+    opacity:
+        0.4;
+
+    animation:
+        rayPulse 3s ease-in-out infinite;
+
+}
+
+
+/* =====================================================
+   RAY 1
+===================================================== */
+
+.ray-one {
+
+    transform:
+        translateX(-50%)
+        rotate(-25deg);
+
+}
+
+
+/* =====================================================
+   RAY 2
+===================================================== */
+
+.ray-two {
+
+    transform:
+        translateX(-50%)
+        rotate(0deg);
+
+    animation-delay:
+        0.7s;
+
+}
+
+
+/* =====================================================
+   RAY 3
+===================================================== */
+
+.ray-three {
+
+    transform:
+        translateX(-50%)
+        rotate(25deg);
+
+    animation-delay:
+        1.4s;
+
+}
+
+
+/* =====================================================
+   RAY ANIMATION
+===================================================== */
+
+@keyframes rayPulse {
+
+    0%,
+    100% {
+
+        opacity:
+            0.1;
+
+    }
+
+    50% {
+
+        opacity:
+            0.7;
+
+    }
+
+}
+
+
+/* =====================================================
+   LOGIN CONTAINER
+===================================================== */
+
+.login-container {
+
+    position: absolute;
+
+    right: 12%;
+
+    top: 62%;
+
+    transform:
+        translateY(-50%);
+
+    width: 380px;
+
+    z-index: 10;
+
+}
+
+
+/* =====================================================
+   LOGIN BOX
+===================================================== */
+
+.login-box {
+
+    padding: 48px;
+
+    border-radius: 25px;
+
+    background:
+        rgba(255,255,255,0.06);
+
+    border:
+        1px solid
+        rgba(255,255,255,0.15);
+
+    backdrop-filter:
+        blur(25px);
+
+    -webkit-backdrop-filter:
+        blur(25px);
+
+    box-shadow:
+
+        0 30px 80px
+        rgba(0,0,0,0.45),
+
+        inset
+        0 0 40px
+        rgba(255,255,255,0.03);
+
+}
+
+
+/* =====================================================
+   LOGIN ICON
+===================================================== */
+
+.login-icon {
+
+    width: 55px;
+
+    height: 55px;
+
+    margin:
+        0 auto 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    color:
+        #fff0a0;
+
+    font-size:
+        28px;
+
+    background:
+        rgba(255,215,90,0.12);
+
+    box-shadow:
+
+        0 0 30px
+        rgba(255,210,70,0.25);
+
+}
+
+
+/* =====================================================
+   LOGIN TITLE
+===================================================== */
+
+.login-box h1 {
+
+    text-align: center;
+
+    font-size: 36px;
+
+    font-weight: 400;
+
+    letter-spacing: 2px;
+
+    color:
+        white;
+
+    text-shadow:
+
+        0 0 20px
+        rgba(255,220,100,0.25);
+
+}
+
+
+/* =====================================================
+   LOGIN SUBTITLE
+===================================================== */
+
+.login-subtitle {
+
+    margin:
+        10px 0 35px;
+
+    text-align:
+        center;
+
+    color:
+        rgba(255,255,255,0.55);
+
+}
+
+
+/* =====================================================
+   INPUT GROUP
+===================================================== */
+
+.input-group {
+
+    position: relative;
+
+    margin-bottom:
+        25px;
+
+}
+
+
+/* =====================================================
+   INPUT
+===================================================== */
+
+.input-group input {
+
+    width: 100%;
+
+    height: 55px;
+
+    padding:
+        0 18px;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.18);
+
+    outline:
+        none;
+
+    border-radius:
+        12px;
+
+    background:
+        rgba(0,0,0,0.2);
+
+    color:
+        white;
+
+    font-size:
+        15px;
+
+}
+
+
+/* =====================================================
+   INPUT LABEL
+===================================================== */
+
+.input-group label {
+
+    position: absolute;
+
+    left: 18px;
+
+    top: 18px;
+
+    color:
+        rgba(255,255,255,0.5);
+
+    pointer-events:
+        none;
+
+    transition:
+        0.3s;
+
+}
+
+
+/* =====================================================
+   INPUT FOCUS
+===================================================== */
+
+.input-group input:focus {
+
+    border-color:
+        rgba(255,220,100,0.7);
+
+    box-shadow:
+
+        0 0 20px
+        rgba(255,210,70,0.1);
+
+}
+
+
+/* =====================================================
+   FLOATING INPUT LABEL
+===================================================== */
+
+.input-group input:focus + label,
+.input-group input:not(:placeholder-shown) + label {
+
+    top:
+        -8px;
+
+    left:
+        14px;
+
+    padding:
+        0 6px;
+
+    font-size:
+        11px;
+
+    background:
+        var(--background-color);
+
+    color:
+        #ffe681;
+
+}
+
+
+/* =====================================================
+   LOGIN OPTIONS
+===================================================== */
+
+.login-options {
+
+    display:
+        flex;
+
+    justify-content:
+        space-between;
+
+    align-items:
+        center;
+
+    margin-bottom:
+        25px;
+
+    font-size:
+        13px;
+
+}
+
+
+/* =====================================================
+   REMEMBER ME
+===================================================== */
+
+.remember {
+
+    display:
+        flex;
+
+    gap:
+        7px;
+
+    color:
+        rgba(255,255,255,0.6);
+
+}
+
+
+/* =====================================================
+   LOGIN LINKS
+===================================================== */
+
+.login-options a,
+.register-text a {
+
+    color:
+        #ffe681;
+
+    text-decoration:
+        none;
+
+}
+
+
+.login-options a:hover,
+.register-text a:hover {
+
+    text-shadow:
+        0 0 10px #ffd85c;
+
+}
+
+
+/* =====================================================
+   MAGIC BUTTON
+===================================================== */
+
+.magic-button {
+
+    position:
+        relative;
+
+    width:
+        100%;
+
+    height:
+        55px;
+
+    border:
+        none;
+
+    border-radius:
+        12px;
+
+    cursor:
+        pointer;
+
+    overflow:
+        hidden;
+
+    color:
+        #241500;
+
+    font-weight:
+        bold;
+
+    letter-spacing:
+        4px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #fff1a1,
+            #d99a1e
+        );
+
+    box-shadow:
+
+        0 0 25px
+        rgba(255,210,70,0.25);
+
+    transition:
+        0.3s;
+
+}
+
+
+/* =====================================================
+   MAGIC BUTTON HOVER
+===================================================== */
+
+.magic-button:hover {
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+
+        0 0 40px
+        rgba(255,210,70,0.55);
+
+}
+
+
+/* =====================================================
+   MAGIC BUTTON ACTIVE
+===================================================== */
+
+.magic-button:active {
+
+    transform:
+        scale(0.97);
+
+}
+
+
+/* =====================================================
+   BUTTON GLOW
+===================================================== */
+
+.button-glow {
+
+    position:
+        absolute;
+
+    top:
+        0;
+
+    left:
+        -100%;
+
+    width:
+        50%;
+
+    height:
+        100%;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,0.7),
+            transparent
+        );
+
+    transform:
+        skewX(-20deg);
+
+    animation:
+        buttonSweep 3s infinite;
+
+}
+
+
+/* =====================================================
+   BUTTON SWEEP ANIMATION
+===================================================== */
+
+@keyframes buttonSweep {
+
+    0% {
+
+        left:
+            -100%;
+
+    }
+
+    40%,
+    100% {
+
+        left:
+            150%;
+
+    }
+
+}
+
+
+/* =====================================================
+   REGISTER TEXT
+===================================================== */
+
+.register-text {
+
+    margin-top:
+        25px;
+
+    text-align:
+        center;
+
+    font-size:
+        13px;
+
+    color:
+        rgba(255,255,255,0.45);
+
+}
+
+
+/* =====================================================
+   BACKGROUND CONTROL
+===================================================== */
+
+.background-control {
+
+    position:
+        fixed;
+
+    bottom:
+        20px;
+
+    left:
+        20px;
+
+    z-index:
+        100;
+
+    display:
+        none !important;
+
+    align-items:
+        center;
+
+    gap:
+        10px;
+
+    padding:
+        10px 14px;
+
+    border-radius:
+        10px;
+
+    background:
+        rgba(0,0,0,0.35);
+
+    border:
+        1px solid
+        rgba(255,255,255,0.1);
+
+    backdrop-filter:
+        blur(10px);
+
+    font-size:
+        12px;
+
+}
+
+
+/* =====================================================
+   BACKGROUND COLOR INPUT
+===================================================== */
+
+.background-control input {
+
+    width:
+        35px;
+
+    height:
+        25px;
+
+    border:
+        none;
+
+    padding:
+        0;
+
+    cursor:
+        pointer;
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 900px) {
+
+
+    /* =================================================
+       MOBILE LAMP
+    ================================================== */
+
+    .lamp-area {
+
+        left:
+            50%;
+
+        top:
+            15%;
+
+        transform:
+            translateX(-50%)
+            scale(0.55);
+
+    }
+
+
+    /* =================================================
+       MOBILE LOGIN
+    ================================================== */
+
+    .login-container {
+
+        left:
+            50%;
+
+        right:
+            auto;
+
+        top:
+            52%;
+
+        width:
+            90%;
+
+        max-width:
+            390px;
+
+        transform:
+            translate(-50%, 0);
+
+    }
+
+
+    /* =================================================
+       MOBILE LOGIN BOX
+    ================================================== */
+
+    .login-box {
+
+        padding:
+            30px;
+
+    }
+
+}
+
+
+

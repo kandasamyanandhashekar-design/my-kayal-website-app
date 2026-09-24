@@ -1,0 +1,278 @@
+
+body {
+
+    background:#000000;
+    
+}
+
+
+.seafood-intro {
+
+    max-width: 1000px;
+    margin: 150px auto 0;
+
+    text-align: justify;
+    color:#fff ;
+}
+
+/* Heading 1 */
+
+.seafood-intro h1 {
+
+    font-size: 56px;
+    font-weight: normal;
+    font-family:Arial;
+    margin-bottom: 35px;
+    text-align: justify;
+    text-justify: inter-word;
+
+}
+
+/*Heading 2*/
+
+.seafood-intro h2 {
+
+    font-size: 17px;
+    font-weight:normal;
+    font-family:Helvetica;
+    line-height: 1.6;
+    margin-top: 0;
+    margin-bottom: 25px;
+    text-align: justify;
+    text-justify: inter-word;
+    padding-right: 200px;
+}
+
+
+.product-container {
+    width: 92%;
+    max-width: 1400px;
+    /* height: 460px; */
+    margin: 0 auto;
+    background:#4760DD;
+    box-sizing: border-box;
+    padding: 80px 30px 40px;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* gap: 25px; */
+    column-gap: 25px;
+    row-gap: 70px;    
+}
+
+
+.product-item {
+    background: #ffffff;
+    box-sizing: border-box;
+
+    padding: 10px 15px;
+
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* IMAGE */
+
+.product-item img {
+    width: 100%;
+
+    height: calc(100% - 40px);
+
+    min-height: 0;
+
+    object-fit: contain;
+
+    display: block;
+
+    flex: 1 1 auto;
+
+    transform: scale(1.30);
+
+    transform-origin: center center;
+}
+
+
+/* H4 */
+
+.product-item h4 {
+    width: 100%;
+    height: 40px;
+    min-height: 40px;
+
+    margin: 0;
+    padding: 5px 0;
+
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    font-size: 18px;
+    line-height: 20px;
+
+    flex-shrink: 0;
+
+    background: #ffffff;
+
+    position: relative;
+    z-index: 20;
+}
+
+
+/* =====================================================
+   PRODUCT CARD HOVER / POP EFFECT
+===================================================== */
+
+.product-item {
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+
+    cursor: pointer;
+}
+
+
+/* DESKTOP HOVER */
+
+.product-item:hover {
+    transform: translateY(-10px) scale(1.03);
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.35);
+
+    z-index: 20;
+}
+
+
+/* =====================================================
+   TOUCH / CLICK POP
+===================================================== */
+
+.product-item.active {
+    transform: translateY(-10px) scale(1.03);
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.35);
+
+    z-index: 20;
+}
+
+
+
+/* =====================================================
+   IMAGE LIGHTBOX
+===================================================== */
+
+.image-lightbox {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0, 0, 0, 0.85);
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: opacity 0.3s ease;
+
+    z-index: 99999;
+
+    cursor: zoom-out;
+}
+
+
+/* SHOW LIGHTBOX */
+
+.image-lightbox.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* LARGE IMAGE */
+
+.image-lightbox img {
+    max-width: 85%;
+    max-height: 85%;
+
+    width: auto;
+    height: auto;
+
+    object-fit: contain;
+
+    transform: scale(0.7);
+
+    transition: transform 0.3s ease;
+
+    cursor: default;
+}
+
+
+/* IMAGE POP */
+
+.image-lightbox.show img {
+    transform: scale(1);
+}
+
+
+/* =====================================================
+   PHOTO CLICK NOTIFICATION
+===================================================== */
+
+.photo-hint {
+    position: fixed;
+
+    padding: 8px 14px;
+
+    background: rgba(0, 0, 0, 0.85);
+    color: #ffffff;
+
+    font-size: 13px;
+    font-family: Arial, sans-serif;
+
+    border-radius: 6px;
+
+    pointer-events: none;
+
+    white-space: nowrap;
+
+    opacity: 0;
+
+    transform: translateY(5px);
+
+    transition:
+        opacity 0.2s ease,
+        transform 0.2s ease;
+
+    z-index: 100000;
+}
+
+
+/* SHOW */
+
+.photo-hint.show {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+
